@@ -1,0 +1,26 @@
+{
+  "name": "drupal/cucumber_recipes",
+  "type": "drupal-module",
+  "description": "The recipe for the tools and components that will be used for testing.",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Webship",
+      "homepage": "http://webship.org",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/cucumber_recipes",
+    "source": "http://cgit.drupalcode.org/cucumber_recipes"
+  },
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "drupal/core": "~10.0"
+  }
+}

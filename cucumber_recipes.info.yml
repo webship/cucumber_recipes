@@ -1,0 +1,16 @@
+name: 'Cucumber Recipes'
+type: module
+description: 'The recipe for the tools and components that will be used for testing.'
+package: Webship
+core_version_requirement: ~10
+dependencies:
+  - core:menu_ui
+  - core:layout_builder
+  - core:layout_discovery
+  - core:field_layout
+  - core:content_moderation
+  - core:tracker
+  - core:node
+  - core:media
+  - core:views
+  - inline_entity_form:inline_entity_form
