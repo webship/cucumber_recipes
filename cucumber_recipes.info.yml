@@ -5,9 +5,8 @@ package: Webship
 core_version_requirement: ~10
 dependencies:
   - core:menu_ui
-  - core:layout_builder
   - core:layout_discovery
-  - core:field_layout
+  - core:layout_builder
   - core:workflows
   - core:tracker
   - core:node
