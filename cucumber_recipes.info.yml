@@ -6,9 +6,7 @@ core_version_requirement: ~10
 dependencies:
   - core:menu_ui
   - core:layout_discovery
-  - core:layout_builder
   - core:workflows
-  - core:tracker
   - core:node
   - core:media
   - core:views
