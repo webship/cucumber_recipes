@@ -8,7 +8,7 @@ dependencies:
   - core:layout_builder
   - core:layout_discovery
   - core:field_layout
-  - core:content_moderation
+  - core:workflows
   - core:tracker
   - core:node
   - core:media
