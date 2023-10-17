@@ -1,0 +1,8 @@
+name: 'Cucumber Products'
+type: module
+description: 'A cucumber products recipe'
+core_version_requirement: ~10
+package: 'Webship'
+
+dependencies:
+  - cucumber_recipes:cucumber_recipes

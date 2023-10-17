@@ -1,3 +1,3 @@
 # Cucumber Projects
 
-Use porject for websites information content and features used to test.
+Use projects for websites information content and features used to test.
