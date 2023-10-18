@@ -6,3 +6,7 @@ package: 'Webship'
 
 dependencies:
   - cucumber_recipes:cucumber_recipes
+  - core:link
+  - core:node
+  - core:file
+  - core:image
