@@ -5,6 +5,9 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.project.field_description
     - field.field.node.project.field_features
+    - field.field.node.project.field_project_link
+    - field.field.node.project.field_project_logo
+    - field.field.node.project.field_project_name
     - node.type.project
     - views.view.features
   module:
@@ -77,4 +80,7 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_project_link: true
+  field_project_logo: true
+  field_project_name: true

@@ -9,7 +9,7 @@ third_party_settings:
     parent: ''
 name: Project
 type: project
-description: "Using project for manage project information and features used to test."
+description: 'Using project for manage project information and features used to test.'
 help: ''
 new_revision: true
 preview_mode: 0

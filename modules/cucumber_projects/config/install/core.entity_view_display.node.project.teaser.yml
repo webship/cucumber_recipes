@@ -5,6 +5,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.field_description
     - field.field.node.project.field_features
+    - field.field.node.project.field_project_link
+    - field.field.node.project.field_project_logo
+    - field.field.node.project.field_project_name
     - node.type.project
   module:
     - user
@@ -21,3 +24,6 @@ content:
 hidden:
   field_description: true
   field_features: true
+  field_project_link: true
+  field_project_logo: true
+  field_project_name: true
