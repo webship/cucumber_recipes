@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Install functions for the Cucumber User Role Developer module.
+ */
+
+ use Vardot\Installer\ModuleInstallerFactory;
+
+/**
+ * Implements hook_enable().
+ */
+function cucumber_projects_install() {
+
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('cucumber_user_role_tester')) {
+    ModuleInstallerFactory::addPermissions('cucumber_user_role_tester', 'config/managed/projects');
+  }
+
+  if ($moduleHandler->moduleExists('cucumber_user_role_developer')) {
+    ModuleInstallerFactory::addPermissions('cucumber_user_role_developer', 'config/managed/projects');
+  }
+
+  if ($moduleHandler->moduleExists('cucumber_user_role_designer')) {
+    ModuleInstallerFactory::addPermissions('cucumber_user_role_designer', 'config/managed/projects');
+  }
+
+  if ($moduleHandler->moduleExists('cucumber_user_role_analyst')) {
+    ModuleInstallerFactory::addPermissions('cucumber_user_role_analyst', 'config/managed/projects');
+  }
+
+  if ($moduleHandler->moduleExists('cucumber_user_role_coordinator')) {
+    ModuleInstallerFactory::addPermissions('cucumber_user_role_coordinator', 'config/managed/projects');
+  }
+
+  if ($moduleHandler->moduleExists('cucumber_user_role_product_owner')) {
+    ModuleInstallerFactory::addPermissions('cucumber_user_role_product_owner', 'config/managed/projects');
+  }
+
+  
+}
