@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ */
+
+ use Vardot\Installer\ModuleInstallerFactory;
+
+ function cucumber_products_modules_installed($modules, $is_syncing) {
+
+  if (in_array('editoria11y', $modules)) {
+
+    ModuleInstallerFactory::addPermissions('cucumber_products', 'config/permissions');
+  }
+
+ }

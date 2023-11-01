@@ -3,6 +3,5 @@ permissions:
    - 'access content'
    - 'access features page'
    - 'access components page'
-   - 'can view developer_dashboard dashboard'
    - 'create feature media'
    - 'edit any feature media'
