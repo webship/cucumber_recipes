@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install user permissions for components content type.
+ */
+
+ use Vardot\Installer\ModuleInstallerFactory;
+
+/**
+ * Implements hook_enable().
+ */
+function cucumber_components_install() {
+
+    ModuleInstallerFactory::addPermissions('cucumber_components', 'config/permissions');
+}

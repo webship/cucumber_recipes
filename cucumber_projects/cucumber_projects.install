@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install user permissions for projects content type.
+ */
+
+ use Vardot\Installer\ModuleInstallerFactory;
+
+/**
+ * Implements hook_enable().
+ */
+function cucumber_projects_install() {
+
+    ModuleInstallerFactory::addPermissions('cucumber_projects', 'config/permissions');
+}
