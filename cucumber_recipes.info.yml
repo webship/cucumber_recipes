@@ -2,4 +2,4 @@ name: 'Cucumber Recipes'
 type: module
 description: 'The recipe for the tools and components that will be used for testing.'
 package: Webship
-core_version_requirement: ~10
+core_version_requirement: ~10.1.0
