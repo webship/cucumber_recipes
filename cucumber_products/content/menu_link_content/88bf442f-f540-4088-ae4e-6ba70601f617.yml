@@ -1,0 +1,32 @@
+_meta:
+  version: "1.0"
+  entity_type: menu_link_content
+  uuid: 88bf442f-f540-4088-ae4e-6ba70601f617
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    - value: true
+  title:
+    - value: Products
+  menu_name:
+    - value: admin
+  link:
+    - uri: "internal:/products"
+      title: ""
+      options:
+        attributes:
+          class:
+            - ""
+  external:
+    - value: false
+  rediscover:
+    - value: true
+  weight:
+    - value: -2
+  expanded:
+    - value: false
+  parent:
+    - value: system.admin
+  revision_translation_affected:
+    - value: true

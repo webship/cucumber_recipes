@@ -1,0 +1,32 @@
+_meta:
+  version: "1.0"
+  entity_type: menu_link_content
+  uuid: d7023d50-d6d1-4e4e-96c9-06719a930e6d
+  bundle: menu
+  default_langcode: en
+default:
+  enabled:
+    - value: true
+  title:
+    - value: Projects
+  menu_name:
+    - value: admin
+  link:
+    - uri: "internal:/projects"
+      title: ""
+      options:
+        attributes:
+          class:
+            - ""
+  external:
+    - value: false
+  rediscover:
+    - value: true
+  weight:
+    - value: 0
+  expanded:
+    - value: false
+  parent:
+    - value: system.admin
+  revision_translation_affected:
+    - value: true
