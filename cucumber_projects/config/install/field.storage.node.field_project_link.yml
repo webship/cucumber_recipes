@@ -1,9 +1,12 @@
+uuid: 44fda456-9105-4617-a4e9-a9c9233b50b5
 langcode: en
 status: true
 dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: rInE1_lvCJABJB3ud6nvChrSVAaSxHsWclfZwtVFvT4
 id: node.field_project_link
 field_name: field_project_link
 entity_type: node

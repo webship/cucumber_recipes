@@ -1,3 +1,4 @@
+uuid: c605e15f-5e80-49ee-bd68-e77d95bd1153
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - node.type.project
   module:
     - link
+_core:
+  default_config_hash: m5TuIK0x0m0dfDGD2LuL_qFfDEdtSCwTOHVpjGehL5M
 id: node.project.field_project_link
 field_name: field_project_link
 entity_type: node
