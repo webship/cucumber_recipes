@@ -5,6 +5,9 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.product.field_description
     - field.field.node.product.field_features
+    - field.field.node.product.field_product_link
+    - field.field.node.product.field_product_logo
+    - field.field.node.product.field_product_name
     - node.type.product
     - views.view.features
   module:
@@ -18,25 +21,58 @@ third_party_settings:
     allow_custom: false
     sections:
       -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 25-75
+        components:
+          2ed25135-0ca7-4c9c-a937-da2c36459168:
+            uuid: 2ed25135-0ca7-4c9c-a937-da2c36459168
+            region: first
+            configuration:
+              id: 'field_block:node:product:field_product_logo'
+              label: 'Product logo'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d:
+            uuid: bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d
+            region: second
+            configuration:
+              id: 'field_block:node:product:field_description'
+              label: Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
         layout_id: layout_onecol
         layout_settings:
           label: ''
         components:
-          bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d:
-            uuid: bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d
-            region: content
-            configuration:
-              id: 'field_block:node:product:field_description'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: basic_string
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
           1bd74642-9a66-4e70-b4a5-af38b6523d55:
             uuid: 1bd74642-9a66-4e70-b4a5-af38b6523d55
             region: content
@@ -48,9 +84,34 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
-            weight: 2
+            weight: 4
+            additional: {  }
+          c86f35fc-682e-4269-906f-960f611551eb:
+            uuid: c86f35fc-682e-4269-906f-960f611551eb
+            region: content
+            configuration:
+              id: 'field_block:node:product:field_product_link'
+              label: 'Product link'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
+            weight: 3
             additional: {  }
         third_party_settings: {  }
+_core:
+  default_config_hash: b5QqU64bywVRWubuOKdX7ki9oFrXOdnrEEGNo-cGoFU
 id: node.product.full
 targetEntityType: node
 bundle: product
@@ -77,4 +138,7 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_product_link: true
+  field_product_logo: true
+  field_product_name: true

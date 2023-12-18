@@ -7,9 +7,11 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: PK5kZhm2HS2BkCa5VB3eHLMUpu_PyxVneEAfmo-LEP8
 name: Product
 type: product
-description: "Using product for manage product information and features used to test."
+description: 'Using product for manage product information and features used to test.'
 help: ''
 new_revision: true
 preview_mode: 0
