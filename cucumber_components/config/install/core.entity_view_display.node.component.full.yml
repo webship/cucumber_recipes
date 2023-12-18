@@ -3,6 +3,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.component.field_component_link
+    - field.field.node.component.field_component_logo
+    - field.field.node.component.field_component_name
     - field.field.node.component.field_description
     - field.field.node.component.field_features
     - node.type.component
@@ -18,25 +21,58 @@ third_party_settings:
     allow_custom: false
     sections:
       -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+          column_widths: 25-75
+        components:
+          f03544cf-acb5-48c1-85b8-4a75dd8f391c:
+            uuid: f03544cf-acb5-48c1-85b8-4a75dd8f391c
+            region: first
+            configuration:
+              id: 'field_block:node:component:field_component_logo'
+              label: 'Component logo'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: medium
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d:
+            uuid: bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d
+            region: second
+            configuration:
+              id: 'field_block:node:component:field_description'
+              label: Description
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: basic_string
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
         layout_id: layout_onecol
         layout_settings:
           label: ''
         components:
-          bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d:
-            uuid: bd30c5e6-084f-4ba4-8e0d-d5dfb95bab3d
-            region: content
-            configuration:
-              id: 'field_block:node:component:field_description'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: basic_string
-                label: above
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
           1bd74642-9a66-4e70-b4a5-af38b6523d55:
             uuid: 1bd74642-9a66-4e70-b4a5-af38b6523d55
             region: content
@@ -48,9 +84,34 @@ third_party_settings:
               context_mapping: {  }
               views_label: ''
               items_per_page: none
+            weight: 3
+            additional: {  }
+          e83af9f1-5727-446f-9281-b68296f6a3f8:
+            uuid: e83af9f1-5727-446f-9281-b68296f6a3f8
+            region: content
+            configuration:
+              id: 'field_block:node:component:field_component_link'
+              label: 'Component link'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: '0'
+                  target: '0'
+                third_party_settings: {  }
             weight: 2
             additional: {  }
         third_party_settings: {  }
+_core:
+  default_config_hash: hXcHJjdXfDvoF0PnpQhzBMv15t3QDjrlrYXa0t9ZvUg
 id: node.component.full
 targetEntityType: node
 bundle: component
@@ -77,4 +138,7 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_component_link: true
+  field_component_logo: true
+  field_component_name: true

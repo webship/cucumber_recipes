@@ -7,9 +7,11 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+_core:
+  default_config_hash: 9Uo6cd4lKgAqpL9U1i-QFb8BRbHZ9xOAkBBpURc4UbY
 name: Component
 type: component
-description: "Using component for manage component information and features used to test."
+description: 'Using component for manage component information and features used to test.'
 help: ''
 new_revision: true
 preview_mode: 0

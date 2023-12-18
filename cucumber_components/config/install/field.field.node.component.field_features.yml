@@ -5,6 +5,8 @@ dependencies:
     - field.storage.node.field_features
     - media.type.feature
     - node.type.component
+_core:
+  default_config_hash: 5OjYA4m9JOJSPTfpqa_DVJtzOoYXox0YrlhxITqpKCY
 id: node.component.field_features
 field_name: field_features
 entity_type: node

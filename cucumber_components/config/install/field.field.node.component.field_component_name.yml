@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_component_name
+    - node.type.component
+id: node.component.field_component_name
+field_name: field_component_name
+entity_type: node
+bundle: component
+label: 'Component Code Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
