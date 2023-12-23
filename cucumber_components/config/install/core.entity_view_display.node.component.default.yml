@@ -81,8 +81,6 @@ third_party_settings:
             weight: 2
             additional: {  }
         third_party_settings: {  }
-_core:
-  default_config_hash: pYAGn_BFddfaUsHAOhzYSMhupqbkztSi_Is1eCSonw8
 id: node.component.default
 targetEntityType: node
 bundle: component

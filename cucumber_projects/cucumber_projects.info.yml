@@ -1,11 +1,7 @@
-name: 'Cucumber Projects'
+name: Cucumber Projects
+description: Projects recipe for automated functional testing.
 type: module
-description: 'A cucumber projects recipe'
-core_version_requirement: ~10
-package: 'Webship'
-
+core_version_requirement: ~10.2.0
+package: Cucumber
 dependencies:
-  - core:link
-  - core:node
-  - core:file
-  - core:image
+  - default_content:default_content

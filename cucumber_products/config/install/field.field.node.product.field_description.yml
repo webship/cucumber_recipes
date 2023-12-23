@@ -4,8 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_description
     - node.type.product
-_core:
-  default_config_hash: xDUMpjPRc3A4MGhv4BIl4QZ09Qqg1fgWkl9V9axcXN8
 id: node.product.field_description
 field_name: field_description
 entity_type: node

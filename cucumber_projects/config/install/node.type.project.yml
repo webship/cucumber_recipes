@@ -7,8 +7,6 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-_core:
-  default_config_hash: s3kdAPHAs-L0mvLgBWJmZte5-X4YcOzxdxv8AzpK8N4
 name: Project
 type: project
 description: 'Using project for manage project information and features used to test.'

@@ -1,9 +1,12 @@
 # Cucumber Recipes
 
-The Cucumber Recipes module is the recipe for the tools and components that will be used for testing depending on what the company wants to test. And they are selected during the installation of the Cucumber project.
+Provides a selection of tools and components essential for testing,
+ allowing customization based on company specific testing needs
+ align with your testing goals during the Cucumber project
+ installation process.
 
-Includes the following recipes:
+### Including the following recipes:
 
-- Products
-- Projects
-- Components
+* Products
+* Projects
+* Components

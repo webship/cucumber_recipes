@@ -6,8 +6,6 @@ dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: Uv_7Gdb6rgRqxYXlkKM7poDTdNtZoEAVIB0CvOEnclg
 id: dashboard_projects
 label: 'Dashboard Projects'
 module: views

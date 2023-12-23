@@ -5,12 +5,12 @@
  * Install user permissions for product content type.
  */
 
- use Vardot\Installer\ModuleInstallerFactory;
+use Vardot\Installer\ModuleInstallerFactory;
 
 /**
  * Implements hook_enable().
  */
 function cucumber_products_install() {
 
-    ModuleInstallerFactory::addPermissions('cucumber_products', 'config/permissions');
+  ModuleInstallerFactory::addPermissions('cucumber_products', 'config/permissions');
 }

@@ -4,8 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_project_name
     - node.type.project
-_core:
-  default_config_hash: qdSm9fesVVfaOP88PehjXA_IT2Ar-_PW-tYvu9BMcX4
 id: node.project.field_project_name
 field_name: field_project_name
 entity_type: node

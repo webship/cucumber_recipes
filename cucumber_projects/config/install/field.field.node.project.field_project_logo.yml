@@ -6,8 +6,6 @@ dependencies:
     - node.type.project
   module:
     - image
-_core:
-  default_config_hash: 0OYpyw5urM8CwQ2g0VYKZ-0s4Jmm8niDThSzx-deDhk
 id: node.project.field_project_logo
 field_name: field_project_logo
 entity_type: node

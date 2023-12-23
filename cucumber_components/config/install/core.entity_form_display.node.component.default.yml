@@ -21,8 +21,6 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-_core:
-  default_config_hash: vUZRUxIeVwpMWdCU78aVYXczq1ilTD1p9jZQMxTCo-s
 id: node.component.default
 targetEntityType: node
 bundle: component

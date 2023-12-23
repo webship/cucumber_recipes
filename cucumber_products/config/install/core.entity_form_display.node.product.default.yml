@@ -21,8 +21,6 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-_core:
-  default_config_hash: wCRIUDyoZbdQCE_4rQAoLhrkY_cbnVcurlFHTG_q1fY
 id: node.product.default
 targetEntityType: node
 bundle: product

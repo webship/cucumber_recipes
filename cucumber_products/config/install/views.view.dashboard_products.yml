@@ -6,8 +6,6 @@ dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: AH8WVJgJb_RtxJc0IxThCJ5P_UbbhW57ufnN4LUwvwI
 id: dashboard_products
 label: 'Dashboard Products'
 module: views

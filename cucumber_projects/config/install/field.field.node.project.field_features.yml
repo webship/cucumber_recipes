@@ -5,8 +5,6 @@ dependencies:
     - field.storage.node.field_features
     - media.type.feature
     - node.type.project
-_core:
-  default_config_hash: Xi2N598W92mZh4SXV7Ig16yFATRBZloJGztX6bXXl1s
 id: node.project.field_features
 field_name: field_features
 entity_type: node

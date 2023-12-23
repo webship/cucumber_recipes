@@ -1,7 +1,7 @@
 {
   "name": "drupal/cucumber_recipes",
   "type": "drupal-module",
-  "description": "The recipe for the tools and components that will be used for testing.",
+  "description": "Provides a selection of tools and components essential for testing, allowing customization based on company specific testing needs align with your testing goals during the Cucumber project installation process.",
   "minimum-stability": "dev",
   "authors": [
     {
@@ -21,7 +21,8 @@
     }
   },
   "require": {
-    "drupal/core": "~10.1.0",
-    "drupal/webdev": "10.0.x-dev"
+    "drupal/core": "~10.2.0",
+    "drupal/webpatches": "~10.0",
+    "drupal/webdev": "~10.0"
   }
 }

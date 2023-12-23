@@ -1,5 +1,7 @@
-name: 'Cucumber Components'
+name: Cucumber Components
+description: Components recipe for automated functional testing. 
 type: module
-description: 'A cucumber components recipe'
-core_version_requirement: ~10
-package: 'Webship'
+core_version_requirement: ~10.2.0
+package: Cucumber
+dependencies:
+  - default_content:default_content

@@ -4,8 +4,6 @@ dependencies:
   module:
     - link
     - node
-_core:
-  default_config_hash: rInE1_lvCJABJB3ud6nvChrSVAaSxHsWclfZwtVFvT4
 id: node.field_project_link
 field_name: field_project_link
 entity_type: node

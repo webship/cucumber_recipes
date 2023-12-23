@@ -6,8 +6,6 @@ dependencies:
   module:
     - node
     - user
-_core:
-  default_config_hash: Dsx1LsMcwc9Z2O1dHxneMYWH_J1hdsuo8fjSWiD7RYM
 id: dashboard_components
 label: 'Dashboard Components'
 module: views

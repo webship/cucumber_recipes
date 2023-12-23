@@ -110,8 +110,6 @@ third_party_settings:
             weight: 3
             additional: {  }
         third_party_settings: {  }
-_core:
-  default_config_hash: b5QqU64bywVRWubuOKdX7ki9oFrXOdnrEEGNo-cGoFU
 id: node.product.full
 targetEntityType: node
 bundle: product
