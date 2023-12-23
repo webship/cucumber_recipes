@@ -5,3 +5,4 @@ core_version_requirement: ~10.2.0
 package: Cucumber
 dependencies:
   - default_content:default_content
+  - cucumber_core:cucumber_core

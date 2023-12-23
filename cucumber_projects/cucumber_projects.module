@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @file cucumber_projects.module
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function cucumber_projects_form_node_project_form_alter(&$form, $form_state, $form_id) {
+  $form['#attached']['library'][] = 'gherkin/gherkin-script';
+}
