@@ -73,19 +73,6 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          1bd74642-9a66-4e70-b4a5-af38b6523d55:
-            uuid: 1bd74642-9a66-4e70-b4a5-af38b6523d55
-            region: content
-            configuration:
-              id: 'views_block:features-features'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 3
-            additional: {  }
           6cf0c482-e60d-40a1-bd44-f30928a48c66:
             uuid: 6cf0c482-e60d-40a1-bd44-f30928a48c66
             region: content
@@ -108,6 +95,19 @@ third_party_settings:
                   target: '0'
                 third_party_settings: {  }
             weight: 2
+            additional: {  }
+          b5512985-3b0c-44b9-a4de-55814c264d6b:
+            uuid: b5512985-3b0c-44b9-a4de-55814c264d6b
+            region: content
+            configuration:
+              id: 'views_block:features-features_block'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 3
             additional: {  }
         third_party_settings: {  }
 id: node.project.full
