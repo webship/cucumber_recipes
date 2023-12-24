@@ -73,19 +73,6 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          1bd74642-9a66-4e70-b4a5-af38b6523d55:
-            uuid: 1bd74642-9a66-4e70-b4a5-af38b6523d55
-            region: content
-            configuration:
-              id: 'views_block:features-features'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 3
-            additional: {  }
           e83af9f1-5727-446f-9281-b68296f6a3f8:
             uuid: e83af9f1-5727-446f-9281-b68296f6a3f8
             region: content
@@ -108,6 +95,19 @@ third_party_settings:
                   target: '0'
                 third_party_settings: {  }
             weight: 2
+            additional: {  }
+          ac515a9b-d0cf-45a9-be26-a21e140667e9:
+            uuid: ac515a9b-d0cf-45a9-be26-a21e140667e9
+            region: content
+            configuration:
+              id: 'views_block:features-features_block'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 3
             additional: {  }
         third_party_settings: {  }
 id: node.component.full
