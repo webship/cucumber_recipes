@@ -73,19 +73,6 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          1bd74642-9a66-4e70-b4a5-af38b6523d55:
-            uuid: 1bd74642-9a66-4e70-b4a5-af38b6523d55
-            region: content
-            configuration:
-              id: 'views_block:features-features'
-              label: ''
-              label_display: visible
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 4
-            additional: {  }
           c86f35fc-682e-4269-906f-960f611551eb:
             uuid: c86f35fc-682e-4269-906f-960f611551eb
             region: content
@@ -108,6 +95,19 @@ third_party_settings:
                   target: '0'
                 third_party_settings: {  }
             weight: 3
+            additional: {  }
+          1db6e4b8-a21c-45b5-829c-48689b3f2de8:
+            uuid: 1db6e4b8-a21c-45b5-829c-48689b3f2de8
+            region: content
+            configuration:
+              id: 'views_block:features-features_block'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 4
             additional: {  }
         third_party_settings: {  }
 id: node.product.full
