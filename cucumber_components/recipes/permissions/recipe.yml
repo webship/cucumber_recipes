@@ -1,0 +1,71 @@
+name: Cucumber Components Permissions
+description: A recipe to components permissions for activated user roles. 
+type: Testing
+config:
+  actions:
+    user.role.tester:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.developer:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+    user.role.analyst:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+    user.role.designer:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+    user.role.coordinator:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.product_owner:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.admin:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.super_admin:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access components page'
+        - 'create feature media'
+        - 'edit any feature media'

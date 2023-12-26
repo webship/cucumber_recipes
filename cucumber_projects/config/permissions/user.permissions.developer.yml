@@ -1,7 +1,0 @@
-id: developer
-permissions:
-   - 'access content'
-   - 'access features page'
-   - 'access projects page'
-   - 'create feature media'
-   - 'edit any feature media'

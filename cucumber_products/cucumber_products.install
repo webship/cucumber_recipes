@@ -2,15 +2,18 @@
 
 /**
  * @file
- * Install user permissions for product content type.
+ * Install, update and uninstall functions for the Cucumber Products module.
  */
 
-use Vardot\Installer\ModuleInstallerFactory;
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
 
 /**
- * Implements hook_enable().
+ * Implements hook_install().
  */
 function cucumber_products_install() {
 
-  ModuleInstallerFactory::addPermissions('cucumber_products', 'config/permissions');
+  $permissions_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/permissions');
+  RecipeRunner::processRecipe($permissions_recipe);
+
 }

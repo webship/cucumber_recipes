@@ -1,0 +1,71 @@
+name: Cucumber Products Permissions
+description: A recipe to product permissions for activated user roles. 
+type: Testing
+config:
+  actions:
+    user.role.tester:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.developer:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+    user.role.analyst:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+    user.role.designer:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+    user.role.coordinator:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.product_owner:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.admin:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+        - 'create feature media'
+        - 'edit any feature media'
+    user.role.super_admin:
+      ensure_exists:
+        status: true
+      grantPermissions:
+        - 'access content'
+        - 'access features page'
+        - 'access products page'
+        - 'create feature media'
+        - 'edit any feature media'
