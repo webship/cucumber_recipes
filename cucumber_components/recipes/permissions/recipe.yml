@@ -5,7 +5,7 @@ config:
   actions:
     user.role.tester:
       ensure_exists:
-        status: true
+        label: 'Tester'
       grantPermissions:
         - 'access content'
         - 'access features page'
@@ -14,28 +14,28 @@ config:
         - 'edit any feature media'
     user.role.developer:
       ensure_exists:
-        status: true
+        label: 'Developer'
       grantPermissions:
         - 'access content'
         - 'access features page'
         - 'access components page'
     user.role.analyst:
       ensure_exists:
-        status: true
+        label: 'Analyst'
       grantPermissions:
         - 'access content'
         - 'access features page'
         - 'access components page'
     user.role.designer:
       ensure_exists:
-        status: true
+        label: 'Designer'
       grantPermissions:
         - 'access content'
         - 'access features page'
         - 'access components page'
     user.role.coordinator:
       ensure_exists:
-        status: true
+        label: 'Coordinator'
       grantPermissions:
         - 'access content'
         - 'access features page'
@@ -44,7 +44,7 @@ config:
         - 'edit any feature media'
     user.role.product_owner:
       ensure_exists:
-        status: true
+        label: 'Product Owner'
       grantPermissions:
         - 'access content'
         - 'access features page'
@@ -53,7 +53,7 @@ config:
         - 'edit any feature media'
     user.role.admin:
       ensure_exists:
-        status: true
+        label: 'Admin'
       grantPermissions:
         - 'access content'
         - 'access features page'
@@ -62,7 +62,7 @@ config:
         - 'edit any feature media'
     user.role.super_admin:
       ensure_exists:
-        status: true
+        label: 'Super Admin'
       grantPermissions:
         - 'access content'
         - 'access features page'
