@@ -5,6 +5,9 @@
  * cucumber_products.module
  */
 
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
