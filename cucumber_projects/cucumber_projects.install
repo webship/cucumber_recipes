@@ -13,7 +13,10 @@ use Drupal\Core\Recipe\RecipeRunner;
  */
 function cucumber_projects_install() {
 
-  $permissions_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/permissions');
-  RecipeRunner::processRecipe($permissions_recipe);
+  $super_admin_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-super-admin');
+  RecipeRunner::processRecipe($super_admin_recipe);
+
+  $admin_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-admin');
+  RecipeRunner::processRecipe($admin_recipe);
 
 }

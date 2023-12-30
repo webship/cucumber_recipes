@@ -1,0 +1,8 @@
+name: Cucumber components - analyst 
+description: A recipe to manage needed change of configs for the analyst user role.
+type: Testing
+config:
+  actions:
+    user.role.analyst:
+      grantPermissions:
+        - 'access components page'

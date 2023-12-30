@@ -1,0 +1,8 @@
+name: Cucumber products - coordinator 
+description: A recipe to manage needed change of configs for the coordinator user role.
+type: Testing
+config:
+  actions:
+    user.role.coordinator:
+      grantPermissions:
+        - 'access products page'

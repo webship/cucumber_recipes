@@ -1,0 +1,8 @@
+name: Cucumber components - product owner 
+description: A recipe to manage needed change of configs for the product owner user role.
+type: Testing
+config:
+  actions:
+    user.role.product_owner:
+      grantPermissions:
+        - 'access components page'

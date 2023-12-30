@@ -1,0 +1,8 @@
+name: Cucumber projects - tester
+description: A recipe to manage needed change of configs for the tester user role.
+type: Testing
+config:
+  actions:
+    user.role.tester:
+      grantPermissions:
+        - 'access projects page'

@@ -1,0 +1,8 @@
+name: Cucumber components - admin 
+description: A recipe to manage needed change of configs for the admin user role.
+type: Testing
+config:
+  actions:
+    user.role.admin:
+      grantPermissions:
+        - 'access components page'

@@ -5,9 +5,49 @@
  * cucumber_components.module
  */
 
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function cucumber_components_form_node_component_form_alter(&$form, $form_state, $form_id) {
   $form['#attached']['library'][] = 'gherkin/gherkin-script';
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function cucumber_components_modules_installed($modules) {
+
+  if (in_array('cucumber_user_role_tester', $modules)) {
+    $tester_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-tester');
+    RecipeRunner::processRecipe($tester_recipe);
+  }
+
+  if (in_array('cucumber_user_role_developer', $modules)) {
+    $developer_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-developer');
+    RecipeRunner::processRecipe($developer_recipe);
+  }
+
+  if (in_array('cucumber_user_role_analyst', $modules)) {
+    $analyst_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-analyst');
+    RecipeRunner::processRecipe($analyst_recipe);
+  }
+
+  if (in_array('cucumber_user_role_coordinator', $modules)) {
+    $coordinator_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-coordinator');
+    RecipeRunner::processRecipe($coordinator_recipe);
+  }
+
+  if (in_array('cucumber_user_role_designer', $modules)) {
+    $designer_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-designer');
+    RecipeRunner::processRecipe($designer_recipe);
+  }
+
+  if (in_array('cucumber_user_role_product_owner', $modules)) {
+    $product_owner_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-product-owner');
+    RecipeRunner::processRecipe($product_owner_recipe);
+  }
+
 }

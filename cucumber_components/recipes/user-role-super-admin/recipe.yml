@@ -1,0 +1,8 @@
+name: Cucumber components - super admin 
+description: A recipe to manage needed change of configs for the super admin user role.
+type: Testing
+config:
+  actions:
+    user.role.super_admin:
+      grantPermissions:
+        - 'access components page'
