@@ -4,68 +4,26 @@ type: Testing
 config:
   actions:
     user.role.tester:
-      ensure_exists:
-        label: 'Tester'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
-        - 'create feature media'
-        - 'edit any feature media'
     user.role.developer:
-      ensure_exists:
-        label: 'Developer'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
     user.role.analyst:
-      ensure_exists:
-        label: 'Analyst'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
     user.role.designer:
-      ensure_exists:
-        label: 'Designer'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
     user.role.coordinator:
-      ensure_exists:
-        label: 'Coordinator'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
-        - 'create feature media'
-        - 'edit any feature media'
     user.role.product_owner:
-      ensure_exists:
-        label: 'Product Owner'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
-        - 'create feature media'
-        - 'edit any feature media'
     user.role.admin:
-      ensure_exists:
-        label: 'Admin'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
-        - 'create feature media'
-        - 'edit any feature media'
     user.role.super_admin:
-      ensure_exists:
-        label: 'Super Admin'
       grantPermissions:
-        - 'access content'
-        - 'access features page'
         - 'access products page'
-        - 'create feature media'
-        - 'edit any feature media'
