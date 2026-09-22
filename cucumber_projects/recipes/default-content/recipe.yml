@@ -1,0 +1,5 @@
+name: Cucumber projects - default content
+description: The default content of Cucumber Projects. A Projects link in the administration menu.
+type: Content
+install:
+  - menu_link_content

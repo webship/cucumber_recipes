@@ -4,6 +4,6 @@ type: module
 core_version_requirement: ^11.4 || ^12
 package: Cucumber
 dependencies:
-  - default_content:default_content
+  - drupal:menu_link_content
   - cucumber_core:cucumber_core
   - tracker:tracker

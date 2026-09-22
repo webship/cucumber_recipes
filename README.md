@@ -39,7 +39,7 @@ kind:
   `dashboard_<thing>` view used as a dashboard block.
 - A Pathauto pattern, so nodes get `/<thing>s/<title>` aliases.
 - An administration menu link to the listing page, imported as default
-  content.
+  content by Drupal core's default content importer (see below).
 - The `access <thing> page` permission.
 - A `hook_form_FORM_ID_alter()` that attaches the `gherkin/gherkin-script`
   library to the node add and edit form.
@@ -58,6 +58,12 @@ Cucumber user role, and every one of them grants that module's
   the matching `cucumber_user_role_*` module is installed - in either
   order.
 
+A ninth recipe, `default-content`, holds the administration menu link
+under `recipes/default-content/content/` and also runs from
+`hook_install()`. Recipes skip content that already exists by UUID, so
+a site that imported the link earlier with the contrib Default Content
+module does not get a second one.
+
 
 ## Requirements
 
@@ -70,9 +76,10 @@ Drupal core `^11.4 || ^12`, plus the packages listed in
 
 Cucumber Core in turn brings in the media, taxonomy, workflow and
 dashboard configuration these modules build on, including the
-`views.view.features` view that the `full` display embeds. Each module
-also depends on [Default Content](https://www.drupal.org/project/default_content),
-which imports the administration menu link.
+`views.view.features` view that the `full` display embeds. The contrib
+[Default Content](https://www.drupal.org/project/default_content) module
+is no longer needed; each module depends on core's Custom Menu Links
+module instead.
 
 
 ## Installation

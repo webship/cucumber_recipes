@@ -1,0 +1,5 @@
+name: Cucumber products - default content
+description: The default content of Cucumber Products. A Products link in the administration menu.
+type: Content
+install:
+  - menu_link_content

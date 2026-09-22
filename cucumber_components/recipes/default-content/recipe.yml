@@ -1,0 +1,5 @@
+name: Cucumber components - default content
+description: The default content of Cucumber Components. A Components link in the administration menu.
+type: Content
+install:
+  - menu_link_content
