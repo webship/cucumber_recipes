@@ -1,0 +1,15 @@
+# Packaging anchor for the cucumber_recipes project. It has no code and no
+# config; the recipes are the cucumber_components, cucumber_products and
+# cucumber_projects sub-modules.
+#
+# It exists because drupal.org's Composer facade (packages.drupal.org) only
+# reads the root composer.json when it sits next to the info file of a
+# component named after the project. Without this file the published
+# drupal/cucumber_recipes package requires nothing but drupal/core, and the
+# GitLab CI templates name the project after the first sub-module.
+name: Cucumber Recipes
+type: module
+description: Packaging anchor for the Cucumber Components, Products and Projects recipes. Enable those modules instead.
+core_version_requirement: ^11.4 || ^12
+package: Cucumber
+hidden: true
