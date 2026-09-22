@@ -9,78 +9,69 @@ dependencies:
     - field.field.node.component.field_features
     - node.type.component
   module:
+    - display_builder
     - image
-    - layout_builder
-    - layout_discovery
     - link
     - user
 third_party_settings:
-  layout_builder:
-    enabled: true
-    allow_custom: false
-    sections:
+  display_builder:
+    profile: default
+    sources:
       -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-        components:
-          06a4eee8-cb82-4e00-8beb-39952674d34d:
-            uuid: 06a4eee8-cb82-4e00-8beb-39952674d34d
-            region: content
-            configuration:
-              id: 'field_block:node:component:field_component_name'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          bcd1a274-0433-4326-a8af-46f6f8a1b7f3:
-            uuid: bcd1a274-0433-4326-a8af-46f6f8a1b7f3
-            region: content
-            configuration:
-              id: 'field_block:node:component:field_component_link'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: link
-                label: above
-                settings:
-                  trim_length: 80
-                  url_only: false
-                  url_plain: false
-                  rel: ''
-                  target: ''
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          56e0a08a-ecb0-4cc1-ae67-7226f30d4ced:
-            uuid: 56e0a08a-ecb0-4cc1-ae67-7226f30d4ced
-            region: content
-            configuration:
-              id: 'field_block:node:component:field_component_logo'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: above
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-        third_party_settings: {  }
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:component:field_component_name'
+          'field:node:component:field_component_name':
+            value:
+              sources:
+                -
+                  source_id: 'field_formatter:node:component:field_component_name'
+                  source:
+                    type: string
+                    label: above
+                    settings:
+                      link_to_entity: false
+                    third_party_settings: {  }
+                    weight: 0
+      -
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:component:field_component_link'
+          'field:node:component:field_component_link':
+            value:
+              sources:
+                -
+                  source_id: 'field_formatter:node:component:field_component_link'
+                  source:
+                    type: link
+                    label: above
+                    settings:
+                      trim_length: 80
+                      url_only: false
+                      url_plain: false
+                      rel: ''
+                      target: ''
+                    third_party_settings: {  }
+                    weight: 1
+      -
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:component:field_component_logo'
+          'field:node:component:field_component_logo':
+            value:
+              sources:
+                -
+                  source_id: 'field_formatter:node:component:field_component_logo'
+                  source:
+                    type: image
+                    label: above
+                    settings:
+                      image_link: ''
+                      image_style: ''
+                      image_loading:
+                        attribute: lazy
+                    third_party_settings: {  }
+                    weight: 2
 id: node.component.default
 targetEntityType: node
 bundle: component

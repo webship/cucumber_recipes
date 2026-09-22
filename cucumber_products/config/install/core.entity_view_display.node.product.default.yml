@@ -9,78 +9,69 @@ dependencies:
     - field.field.node.product.field_product_name
     - node.type.product
   module:
+    - display_builder
     - image
-    - layout_builder
-    - layout_discovery
     - link
     - user
 third_party_settings:
-  layout_builder:
-    enabled: true
-    allow_custom: false
-    sections:
+  display_builder:
+    profile: default
+    sources:
       -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-        components:
-          6bab32f2-7cfa-4b12-a916-6a093ad2d06e:
-            uuid: 6bab32f2-7cfa-4b12-a916-6a093ad2d06e
-            region: content
-            configuration:
-              id: 'field_block:node:product:field_product_name'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: above
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          96f7ae65-344c-4096-8b2e-70c604601b01:
-            uuid: 96f7ae65-344c-4096-8b2e-70c604601b01
-            region: content
-            configuration:
-              id: 'field_block:node:product:field_product_link'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: link
-                label: above
-                settings:
-                  trim_length: 80
-                  url_only: false
-                  url_plain: false
-                  rel: ''
-                  target: ''
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-          f88e722a-cfed-4742-b54a-60d5abb9095b:
-            uuid: f88e722a-cfed-4742-b54a-60d5abb9095b
-            region: content
-            configuration:
-              id: 'field_block:node:product:field_product_logo'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: image
-                label: above
-                settings:
-                  image_link: ''
-                  image_style: ''
-                  image_loading:
-                    attribute: lazy
-                third_party_settings: {  }
-            weight: 2
-            additional: {  }
-        third_party_settings: {  }
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:product:field_product_name'
+          'field:node:product:field_product_name':
+            value:
+              sources:
+                -
+                  source_id: 'field_formatter:node:product:field_product_name'
+                  source:
+                    type: string
+                    label: above
+                    settings:
+                      link_to_entity: false
+                    third_party_settings: {  }
+                    weight: 0
+      -
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:product:field_product_link'
+          'field:node:product:field_product_link':
+            value:
+              sources:
+                -
+                  source_id: 'field_formatter:node:product:field_product_link'
+                  source:
+                    type: link
+                    label: above
+                    settings:
+                      trim_length: 80
+                      url_only: false
+                      url_plain: false
+                      rel: ''
+                      target: ''
+                    third_party_settings: {  }
+                    weight: 1
+      -
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:product:field_product_logo'
+          'field:node:product:field_product_logo':
+            value:
+              sources:
+                -
+                  source_id: 'field_formatter:node:product:field_product_logo'
+                  source:
+                    type: image
+                    label: above
+                    settings:
+                      image_link: ''
+                      image_style: ''
+                      image_loading:
+                        attribute: lazy
+                    third_party_settings: {  }
+                    weight: 2
 id: node.product.default
 targetEntityType: node
 bundle: product

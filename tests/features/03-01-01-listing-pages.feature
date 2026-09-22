@@ -32,8 +32,7 @@ Feature: Each Cucumber Recipes module installs its listing page
      And I fill in "Name" with "Cucumber features block product"
      And I press "Save"
     Then I should see "Cucumber features block product"
-     And ".node--type-product.node--view-mode-full" should be visible within 15 seconds
-     And ".block-views-blockfeatures-features-block" should be visible within 15 seconds
+     And ".views-element-container" should be visible within 15 seconds
      And ".view-features" should be visible within 15 seconds
 
   Scenario: A Project node renders its full view display with the features block
@@ -45,8 +44,9 @@ Feature: Each Cucumber Recipes module installs its listing page
     When I fill in "field_project_logo[0][alt]" with "Cucumber project logo" by its "name" attribute
      And I press "Save"
     Then I should see "Cucumber features block project"
-     And ".node--type-project.node--view-mode-full" should be visible within 15 seconds
-     And ".block-views-blockfeatures-features-block" should be visible within 15 seconds
+     And "img[alt='Cucumber project logo']" should be visible within 15 seconds
+     And "a[href='https://webship.co']" should be visible within 15 seconds
+     And ".views-element-container" should be visible within 15 seconds
      And ".view-features" should be visible within 15 seconds
 
   Scenario: A Component node renders its full view display with the features block
@@ -54,6 +54,5 @@ Feature: Each Cucumber Recipes module installs its listing page
      And I fill in "Name" with "Cucumber features block component"
      And I press "Save"
     Then I should see "Cucumber features block component"
-     And ".node--type-component.node--view-mode-full" should be visible within 15 seconds
-     And ".block-views-blockfeatures-features-block" should be visible within 15 seconds
+     And ".views-element-container" should be visible within 15 seconds
      And ".view-features" should be visible within 15 seconds
