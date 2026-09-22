@@ -4,9 +4,10 @@
   "description": "Provides a selection of tools and components essential for testing, allowing customization based on company specific testing needs align with your testing goals during the Cucumber project installation process.",
   "license": "GPL-2.0",
   "engines": {
-    "yarn": ">= 1.6",
-    "node": ">= 18.0"
+    "yarn": ">= 4.9.3",
+    "node": ">= 20.0"
   },
+  "packageManager": "yarn@4.9.3",
   "keywords": [
     "Drupal",
     "Cucumber",
@@ -19,11 +20,12 @@
     "phpcbf": "phpcbf --standard=./.phpcs.xml .",
     "lint:js": "node ./node_modules/eslint/bin/eslint.js .",
     "lint:css": "stylelint \"**/*.css\"",
-    "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --ext .yml ."
+    "lint:yaml": "node ./node_modules/eslint/bin/eslint.js --ext .yml .",
+    "test": "cucumber-js --config cucumber.js",
+    "test:headed": "HEADLESS=false cucumber-js --config cucumber.js",
+    "test:chromium": "BROWSER=chromium cucumber-js --config cucumber.js"
   },
-  "dependencies": {  },
   "devDependencies": {
-    "webship-js": "~1",
     "eslint": "~8",
     "eslint-config-airbnb-base": "~15",
     "eslint-config-prettier": "~8",
@@ -54,7 +56,8 @@
     "terser-webpack-plugin": "~5",
     "underscore": "~1",
     "webpack": "~5",
-    "webpack-cli": "~5"
+    "webpack-cli": "~5",
+    "webship-js": "~2.0"
   },
   "browserslist": [
     "last 2 Chrome major versions",
@@ -66,5 +69,8 @@
     "last 1 ChromeAndroid version",
     "last 1 Samsung version",
     "Firefox ESR"
-  ]
+  ],
+  "resolutions": {
+    "@cucumber/cucumber": "10.0.1"
+  }
 }
