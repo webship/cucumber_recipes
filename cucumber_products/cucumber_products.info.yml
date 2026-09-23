@@ -6,6 +6,8 @@ package: Cucumber
 dependencies:
   - drupal:menu_link_content
   - cucumber_core:cucumber_core
+  # The Feature media type this content type's Features field points at.
+  - gherkin:gherkin
   - display_builder:display_builder_entity_view
   - ui_patterns:ui_patterns_field_formatters
   - tracker:tracker
