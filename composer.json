@@ -2,7 +2,6 @@
   "name": "drupal/cucumber_recipes",
   "type": "drupal-module",
   "description": "Provides a selection of tools and components essential for testing, allowing customization based on company specific testing needs align with your testing goals during the Cucumber project installation process.",
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Webship",
@@ -23,7 +22,7 @@
   "require": {
     "drupal/core": "^11.4 || ^12",
     "drupal/webpatches": "~12.0",
-    "drupal/cucumber_core": "12.0.x-dev",
+    "drupal/cucumber_core": "~12.0",
     "drupal/display_builder": "^1.0@beta",
     "drupal/ui_patterns": "^2.0",
     "drupal/tracker": "~1.0"
