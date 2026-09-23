@@ -21,3 +21,11 @@ config:
     cucumber_core:
       - field.storage.node.field_description
       - field.storage.node.field_features
+    # The Full content and Teaser view modes this module's *.full and
+    # *.teaser displays use are config entities Drupal core's Node module
+    # ships but the same syncing mode skips when a recipe enables that
+    # module. Import them here, so those displays below have a view mode
+    # to depend on.
+    node:
+      - core.entity_view_mode.node.full
+      - core.entity_view_mode.node.teaser
