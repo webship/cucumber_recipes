@@ -1,0 +1,12 @@
+name: 'Cucumber Components'
+description: 'Gives a site the Cucumber Components content type with its fields, displays, path pattern and views, grants the Super Admin and Admin roles access to the components page, and adds the Components link to the administration menu.'
+type: install
+recipes:
+  # The module and the configuration it ships, first: the recipes below act
+  # on that configuration.
+  - foundation
+  # The two roles that administer this content on a plain Drupal site.
+  - user-role-super-admin
+  - user-role-admin
+  # The administration menu link.
+  - default-content

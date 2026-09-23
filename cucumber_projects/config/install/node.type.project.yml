@@ -10,7 +10,7 @@ third_party_settings:
 name: Project
 type: project
 description: 'Using project for manage project information and features used to test.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: false

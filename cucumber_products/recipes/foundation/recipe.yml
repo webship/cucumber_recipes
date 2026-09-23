@@ -1,0 +1,23 @@
+name: 'Cucumber Products foundation'
+description: 'Installs the Cucumber Products module with the configuration it ships: the Product content type with its fields, form and view displays, path pattern and the Products and dashboard views.'
+type: install
+install:
+  - cucumber_products
+config:
+  # Only create what a site does not have yet. Re-applying this recipe on a
+  # site that already has this configuration is a no-op.
+  strict: false
+  import:
+    # A recipe installs modules with the configuration installer in syncing
+    # mode, which creates simple configuration but no configuration entities
+    # (see \Drupal\Core\Recipe\RecipeRunner::installModules()). Import them
+    # here, so applying this recipe leaves the same configuration behind as
+    # `drush pm:install cucumber_products`.
+    cucumber_products: '*'
+    # The description and features fields of this content type are instances
+    # of field storages that Cucumber Core owns, and the same syncing mode
+    # skips them when a recipe installs Cucumber Core. Import them here, so
+    # the fields have a storage to be created on.
+    cucumber_core:
+      - field.storage.node.field_description
+      - field.storage.node.field_features

@@ -12,22 +12,22 @@ use Drupal\Core\Recipe\RecipeRunner;
  * Implements hook_install().
  */
 function cucumber_projects_install($is_syncing) {
+  // Configuration imports bring their own configuration.
+  if (\Drupal::isConfigSyncing()) {
+    return;
+  }
 
-  $super_admin_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-super-admin');
-  RecipeRunner::processRecipe($super_admin_recipe);
-
-  $admin_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/user-role-admin');
-  RecipeRunner::processRecipe($admin_recipe);
-
-  // Import the default content with Drupal core's default content importer.
-  // Content is not configuration, so a config import leaves it alone, as
-  // default_content did. Recipes import content that already exists (by
+  // When the module is installed on its own, apply its default recipe. When
+  // the default recipe installs the module, the recipe is already applied.
+  //
+  // The recipe grants the Super Admin and Admin roles access to the
+  // projects page and imports the default content, the administration menu
+  // link. Content is not configuration, so a config import leaves it alone,
+  // as default_content did. Recipes import content that already exists (by
   // UUID) as a no-op, so applying this again, or on a site that imported the
   // same entities with the contrib default_content module, creates no
   // duplicates.
   if (!$is_syncing) {
-    $default_content_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/default-content');
-    RecipeRunner::processRecipe($default_content_recipe);
+    RecipeRunner::processRecipe(Recipe::createFromDirectory(__DIR__ . '/recipes/default'));
   }
-
 }
