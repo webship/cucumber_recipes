@@ -8,6 +8,8 @@ dependencies:
   - cucumber_core:cucumber_core
   # The Feature media type this content type's Features field points at.
   - gherkin:gherkin
+  # The fields of this content type are edited with Inline Entity Form.
+  - inline_entity_form:inline_entity_form
   - display_builder:display_builder_entity_view
   - ui_patterns:ui_patterns_field_formatters
   - tracker:tracker
