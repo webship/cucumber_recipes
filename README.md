@@ -45,8 +45,10 @@ kind:
   library to the node add and edit form.
 
 Each module also carries eight Drupal recipes under `recipes/`, one per
-Cucumber user role, and every one of them grants that module's
-`access <thing> page` permission:
+Cucumber user role. Every one of them grants that module's
+`access <thing> page` permission, and the recipes of the Admin,
+Coordinator and Product Owner roles let the role keep the content: add
+an item, change any item and delete the items it added itself:
 
 - `user-role-super-admin` and `user-role-admin` run from
   `hook_install()`. They create the role if the site does not already

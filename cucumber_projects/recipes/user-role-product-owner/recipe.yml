@@ -6,3 +6,10 @@ config:
     user.role.product_owner:
       grantPermissions:
         - 'access projects page'
+        # The role keeps the projects: it adds one, changes any of them and
+        # deletes the ones it added itself.
+        - 'create project content'
+        - 'edit own project content'
+        - 'edit any project content'
+        - 'delete own project content'
+        - 'view project revisions'

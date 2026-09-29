@@ -6,3 +6,10 @@ config:
     user.role.product_owner:
       grantPermissions:
         - 'access products page'
+        # The role keeps the products: it adds one, changes any of them and
+        # deletes the ones it added itself.
+        - 'create product content'
+        - 'edit own product content'
+        - 'edit any product content'
+        - 'delete own product content'
+        - 'view product revisions'

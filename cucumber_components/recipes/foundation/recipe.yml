@@ -29,3 +29,10 @@ config:
     node:
       - core.entity_view_mode.node.full
       - core.entity_view_mode.node.teaser
+    # The displays of this content type are built with Display Builder, by
+    # its default profile. The profile and the text format of its blocks are
+    # optional configuration of Display Builder, which the same syncing mode
+    # skips: without them the page of a component shows nothing.
+    display_builder:
+      - display_builder.profile.default
+      - filter.format.display_builder_html

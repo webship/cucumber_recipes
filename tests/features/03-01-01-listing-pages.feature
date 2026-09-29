@@ -9,17 +9,17 @@ Feature: Each Cucumber Recipes module installs its listing page
   Scenario: The Components listing renders
     When I navigate to "/components"
     Then I should see "Components"
-     And ".view-components" should be visible within 15 seconds
+     And ".views-element-container" should be visible within 15 seconds
 
   Scenario: The Products listing renders
     When I navigate to "/products"
     Then I should see "Products"
-     And ".view-products" should be visible within 15 seconds
+     And ".views-element-container" should be visible within 15 seconds
 
   Scenario: The Projects listing renders
     When I navigate to "/projects"
     Then I should see "Projects"
-     And ".view-projects" should be visible within 15 seconds
+     And ".views-element-container" should be visible within 15 seconds
 
   Scenario: Each module adds its listing to the administration menu
     When I navigate to "/admin/structure/menu/manage/admin"
@@ -33,7 +33,7 @@ Feature: Each Cucumber Recipes module installs its listing page
      And I press "Save"
     Then I should see "Cucumber features block product"
      And ".views-element-container" should be visible within 15 seconds
-     And ".view-features" should be visible within 15 seconds
+     And I should see "No features yet."
 
   Scenario: A Project node renders its full view display with the features block
     When I navigate to "/node/add/project"
@@ -47,7 +47,7 @@ Feature: Each Cucumber Recipes module installs its listing page
      And "img[alt='Cucumber project logo']" should be visible within 15 seconds
      And "a[href='https://webship.co']" should be visible within 15 seconds
      And ".views-element-container" should be visible within 15 seconds
-     And ".view-features" should be visible within 15 seconds
+     And I should see "No features yet."
 
   Scenario: A Component node renders its full view display with the features block
     When I navigate to "/node/add/component"
@@ -55,4 +55,4 @@ Feature: Each Cucumber Recipes module installs its listing page
      And I press "Save"
     Then I should see "Cucumber features block component"
      And ".views-element-container" should be visible within 15 seconds
-     And ".view-features" should be visible within 15 seconds
+     And I should see "No features yet."

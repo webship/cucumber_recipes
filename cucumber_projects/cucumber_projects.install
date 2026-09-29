@@ -5,6 +5,7 @@
  * Install, update and uninstall functions for the Cucumber Projects module.
  */
 
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Recipe\Recipe;
 use Drupal\Core\Recipe\RecipeRunner;
 
@@ -29,5 +30,121 @@ function cucumber_projects_install($is_syncing) {
   // duplicates.
   if (!$is_syncing) {
     RecipeRunner::processRecipe(Recipe::createFromDirectory(__DIR__ . '/recipes/default'));
+
+    // The Cucumber user roles that are on the site already get their recipe
+    // now. The ones that come later get it from hook_modules_installed().
+    $roles = [
+      'tester' => 'user-role-tester',
+      'developer' => 'user-role-developer',
+      'analyst' => 'user-role-analyst',
+      'coordinator' => 'user-role-coordinator',
+      'designer' => 'user-role-designer',
+      'product_owner' => 'user-role-product-owner',
+    ];
+    foreach ($roles as $role => $recipe) {
+      if (\Drupal::moduleHandler()->moduleExists('cucumber_user_role_' . $role)) {
+        RecipeRunner::processRecipe(Recipe::createFromDirectory(__DIR__ . '/recipes/' . $recipe));
+      }
+    }
   }
+}
+
+/**
+ * Say when the projects listings are empty and drop two stray settings.
+ */
+function cucumber_projects_update_12001() {
+  $factory = \Drupal::configFactory();
+
+  foreach (['projects', 'dashboard_projects'] as $id) {
+    $view = $factory->getEditable('views.view.' . $id);
+    if ($view->isNew()) {
+      continue;
+    }
+    $options = $view->get('display.default.display_options');
+    // A key the date formatter has no configuration schema for.
+    foreach ($options['fields'] ?? [] as $field_id => $field) {
+      if (isset($field['settings']['time_diff']) && array_key_exists('description', $field['settings']['time_diff'])) {
+        unset($options['fields'][$field_id]['settings']['time_diff']['description']);
+      }
+    }
+    if (empty($options['empty'])) {
+      $options['empty'] = [
+        'area_text_custom' => [
+          'id' => 'area_text_custom',
+          'table' => 'views',
+          'field' => 'area_text_custom',
+          'relationship' => 'none',
+          'group_type' => 'group',
+          'admin_label' => '',
+          'plugin_id' => 'text_custom',
+          'empty' => TRUE,
+          'content' => 'No projects yet.',
+          'tokenize' => FALSE,
+        ],
+      ];
+    }
+    $view->set('display.default.display_options', $options)->save(TRUE);
+  }
+
+  // A condition carries its identifier as its key: the copy inside the
+  // condition has no configuration schema.
+  $pattern = $factory->getEditable('pathauto.pattern.project_pattern');
+  if (!$pattern->isNew()) {
+    $criteria = $pattern->get('selection_criteria') ?? [];
+    foreach ($criteria as $id => $condition) {
+      unset($criteria[$id]['uuid']);
+    }
+    $pattern->set('selection_criteria', $criteria)->save(TRUE);
+  }
+
+  return t('The projects listings say when they are empty.');
+}
+
+/**
+ * Give the Cucumber roles what the recipes of this module grant them.
+ */
+function cucumber_projects_update_12002() {
+  $storage = \Drupal::entityTypeManager()->getStorage('user_role');
+  $known = array_keys(\Drupal::service('user.permissions')->getPermissions());
+  $updated = [];
+
+  // What a role may do is written down once, in the recipes of this module.
+  $recipes = [
+    'admin' => 'user-role-admin',
+    'tester' => 'user-role-tester',
+    'developer' => 'user-role-developer',
+    'analyst' => 'user-role-analyst',
+    'coordinator' => 'user-role-coordinator',
+    'designer' => 'user-role-designer',
+    'product_owner' => 'user-role-product-owner',
+  ];
+  foreach ($recipes as $role_id => $recipe) {
+    /** @var \Drupal\user\RoleInterface|null $role */
+    $role = $storage->load($role_id);
+    $file = __DIR__ . '/recipes/' . $recipe . '/recipe.yml';
+    if (!$role || $role->isAdmin() || !is_readable($file)) {
+      continue;
+    }
+    $data = Yaml::decode((string) file_get_contents($file));
+    $wanted = $data['config']['actions']['user.role.' . $role_id]['grantPermissions'] ?? [];
+    // Only what this site knows: a permission has to exist to be granted.
+    $missing = array_filter(
+      array_intersect($wanted, $known),
+      static fn (string $permission): bool => !$role->hasPermission($permission),
+    );
+    if (!$missing) {
+      continue;
+    }
+    foreach ($missing as $permission) {
+      $role->grantPermission($permission);
+    }
+    $role->save();
+    $updated[] = $role->label();
+  }
+
+  if (!$updated) {
+    return t('No Cucumber role is on this site, nothing to update.');
+  }
+
+  return t('These roles hold their permissions on the projects: @roles.', ['@roles' => implode(', ', $updated)]);
 }

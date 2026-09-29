@@ -22,3 +22,18 @@ Feature: Installing a Cucumber Recipes module applies its user role recipes
     Then the element "#edit-super-admin-access-components-page" with the attribute "checked" and the value "checked" should exist
      And the element "#edit-super-admin-access-products-page" with the attribute "checked" and the value "checked" should exist
      And the element "#edit-super-admin-access-projects-page" with the attribute "checked" and the value "checked" should exist
+
+  Scenario Outline: The Admin role keeps the <type> content
+    When I navigate to "/admin/people/permissions/admin"
+    Then the element "#edit-admin-create-<type>-content" with the attribute "checked" and the value "checked" should exist
+     And the element "#edit-admin-edit-own-<type>-content" with the attribute "checked" and the value "checked" should exist
+     And the element "#edit-admin-edit-any-<type>-content" with the attribute "checked" and the value "checked" should exist
+     And the element "#edit-admin-delete-own-<type>-content" with the attribute "checked" and the value "checked" should exist
+     And the "#edit-admin-delete-any-<type>-content" checkbox should not be checked
+     And the "#edit-admin-administer-nodes" checkbox should not be checked
+
+    Examples:
+      | type      |
+      | product   |
+      | component |
+      | project   |

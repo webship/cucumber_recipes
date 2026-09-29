@@ -28,6 +28,14 @@ module.exports = {
           password: 'dD.123123ddd',
           isAdmin: true,
         },
+        // The role the Cucumber modules create: it keeps the products, the
+        // components and the projects.
+        Admin: {
+          username: 'admin_user',
+          email: 'admin_user@example.test',
+          password: 'dD.123123ddd',
+          roles: ['admin'],
+        },
         'Content editor': {
           username: 'content_editor_user',
           email: 'content_editor_user@example.test',

@@ -12,3 +12,10 @@ config:
         is_admin: false
       grantPermissions:
         - 'access components page'
+        # The role keeps the components: it adds one, changes any of them and
+        # deletes the ones it added itself.
+        - 'create component content'
+        - 'edit own component content'
+        - 'edit any component content'
+        - 'delete own component content'
+        - 'view component revisions'
