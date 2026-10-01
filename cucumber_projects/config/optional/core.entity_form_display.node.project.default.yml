@@ -10,17 +10,10 @@ dependencies:
     - image.style.medium
     - node.type.project
   module:
-    - field_layout
     - image
     - inline_entity_form
-    - layout_discovery
     - link
     - path
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.project.default
 targetEntityType: node
 bundle: project
